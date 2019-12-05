@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/space_6">
+
+
+    <TextView
+        android:id="@+id/tv_mtitle"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/str_statis"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_vs"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textAlignment="center"
+        android:textSize="@dimen/size_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mtitle"
+        tools:text="Orlando Magic vs San Antonio Spurs" />
+
+
+    <TextView
+        android:id="@+id/tv_date_time"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/size_6"
+        app:layout_constraintEnd_toEndOf="@+id/tv_vs"
+        app:layout_constraintStart_toStartOf="@+id/tv_vs"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vs"
+        tools:text="15 Januari 2017 - 23:00:00" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorDivider"
+        app:layout_constraintEnd_toEndOf="@+id/tv_vs"
+        app:layout_constraintStart_toStartOf="@+id/tv_vs"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date_time" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="@dimen/space_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev1"
+        app:layout_constraintTop_toBottomOf="@+id/view2">
+
+        <ImageView
+            android:id="@+id/img_badgeHb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/space_3"
+            android:contentDescription="@string/todo"
+            android:scaleType="fitCenter"
+            tools:src="@drawable/english_premier_league" />
+
+        <ProgressBar
+            android:id="@+id/prog_hsteam"
+            android:layout_width="@dimen/space_10"
+            android:layout_height="@dimen/space_10"
+            android:layout_gravity="center" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_tnameh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/size_10"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        tools:text="Orlando Magic" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewA"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="@dimen/space_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev3"
+        app:layout_constraintTop_toBottomOf="@+id/view2">
+
+        <ImageView
+            android:id="@+id/img_badgeAb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/space_3"
+            android:contentDescription="@string/todo"
+            android:scaleType="fitCenter"
+            tools:src="@drawable/english_premier_league" />
+
+        <ProgressBar
+            android:id="@+id/prog_asteam"
+            android:layout_width="@dimen/space_10"
+            android:layout_height="@dimen/space_10"
+            android:layout_gravity="center" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_tnamea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/size_10"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/cardViewA"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/cardViewA"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewA"
+        tools:text="San Antonio Spurs" />
+
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/formation"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev3"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toEndOf="@+id/guidelinev2"
+        app:layout_constraintTop_toTopOf="@+id/guidelineh1" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/goals"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev3"
+        app:layout_constraintStart_toEndOf="@+id/guidelinev2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_formationh" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/shots"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev3"
+        app:layout_constraintStart_toEndOf="@+id/guidelinev2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_goalh" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/red_cards"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev3"
+        app:layout_constraintStart_toEndOf="@+id/guidelinev2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shoth" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/yellow_cards"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev3"
+        app:layout_constraintStart_toEndOf="@+id/guidelinev2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_credh" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/goal_keeper"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev3"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cyellowh" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/defense"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev3"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_gkeeperh" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/midfield"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev3"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toEndOf="@+id/guidelinev2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_defenseh" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/forward"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev3"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toEndOf="@+id/guidelinev2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_midh" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/substitutes"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev3"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toEndOf="@+id/guidelinev2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_forwardh" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/goal_details"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev3"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toEndOf="@+id/guidelinev2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subtih" />
+
+
+    <TextView
+        android:id="@+id/tv_formationh"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="@string/formation"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev1"
+        app:layout_constraintTop_toTopOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/tv_goalh"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev2"
+        app:layout_constraintHorizontal_bias="0.004"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev1"
+        app:layout_constraintTop_toTopOf="@+id/textView2"
+        tools:text="Goals" />
+
+    <TextView
+        android:id="@+id/tv_shoth"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev1"
+        app:layout_constraintTop_toTopOf="@+id/textView5"
+        tools:text="Shots" />
+
+    <TextView
+        android:id="@+id/tv_credh"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev1"
+        app:layout_constraintTop_toTopOf="@+id/textView6"
+        tools:text="Red Cards" />
+
+    <TextView
+        android:id="@+id/tv_cyellowh"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev1"
+        app:layout_constraintTop_toTopOf="@+id/textView7"
+        tools:text="Yellow Cards" />
+
+    <TextView
+        android:id="@+id/tv_gkeeperh"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev1"
+        app:layout_constraintTop_toTopOf="@+id/textView9"
+        tools:text="Lineup Goal keeper" />
+
+    <TextView
+        android:id="@+id/tv_defenseh"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev1"
+        app:layout_constraintTop_toTopOf="@+id/textView10"
+        tools:text="Lineup Defense" />
+
+    <TextView
+        android:id="@+id/tv_midh"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev1"
+        app:layout_constraintTop_toTopOf="@+id/textView11"
+        tools:text="Lineup Midfield" />
+
+    <TextView
+        android:id="@+id/tv_forwardh"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev1"
+        app:layout_constraintTop_toTopOf="@+id/textView13"
+        tools:text="Lineup Forward" />
+
+    <TextView
+        android:id="@+id/tv_subtih"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev1"
+        app:layout_constraintTop_toTopOf="@+id/textView14"
+        tools:text="Lineup Substitutes" />
+
+    <TextView
+        android:id="@+id/tv_dgoalh"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev1"
+        app:layout_constraintTop_toTopOf="@+id/textView3"
+        tools:text="Goal Details" />
+
+
+    <TextView
+        android:id="@+id/tv_formationa"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev3"
+        app:layout_constraintTop_toTopOf="@+id/textView15"
+        tools:text="@string/formation" />
+
+    <TextView
+        android:id="@+id/tv_goala"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev3"
+        app:layout_constraintTop_toTopOf="@+id/textView2"
+        tools:text="Goals" />
+
+    <TextView
+        android:id="@+id/tv_shota"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev3"
+        app:layout_constraintTop_toTopOf="@+id/textView5"
+        tools:text="Shots" />
+
+    <TextView
+        android:id="@+id/tv_creda"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev3"
+        app:layout_constraintTop_toTopOf="@+id/textView6"
+        tools:text="Red Cards" />
+
+    <TextView
+        android:id="@+id/tv_cyellowa"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev3"
+        app:layout_constraintTop_toTopOf="@+id/textView7"
+        tools:text="Yellow Cards" />
+
+    <TextView
+        android:id="@+id/tv_gkeepera"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev3"
+        app:layout_constraintTop_toTopOf="@+id/textView9"
+        tools:text="Lineup Goal keeper" />
+
+    <TextView
+        android:id="@+id/tv_defensea"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev3"
+        app:layout_constraintTop_toTopOf="@+id/textView10"
+        tools:text="Lineup Defense" />
+
+    <TextView
+        android:id="@+id/tv_mida"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev3"
+        app:layout_constraintTop_toTopOf="@+id/textView11"
+        tools:text="Lineup Midfield" />
+
+    <TextView
+        android:id="@+id/tv_forwarda"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev3"
+        app:layout_constraintTop_toTopOf="@+id/textView13"
+        tools:text="Lineup Forward" />
+
+    <TextView
+        android:id="@+id/tv_subtia"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev3"
+        app:layout_constraintTop_toTopOf="@+id/textView14"
+        tools:text="Lineup Substitutes" />
+
+    <TextView
+        android:id="@+id/tv_dgoala"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinev4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelinev3"
+        app:layout_constraintTop_toTopOf="@+id/textView3"
+        tools:text="Goal Details" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinev1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="8dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinev4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="8dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinev2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="136dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinev3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="136dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineh1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="173dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

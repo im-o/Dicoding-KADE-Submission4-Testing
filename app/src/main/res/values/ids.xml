@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="liga_img" type="id" />
+    <item name="liga_name" type="id" />
+    <item name="liga_desc" type="id" />
+    <item name="rv_main" type="id" />
+    <item name="swipe_main" type="id" />
+    <item name="liga_progress" type="id" />
+    <item name="liga_cardv" type="id" />
+</resources>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:layout_marginStart="@dimen/space_16"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="@dimen/space_16"
+    android:layout_marginBottom="6dp"
+    android:foreground="@drawable/bg_onclick_transparant"
+    app:cardCornerRadius="@dimen/space_8">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/tv_league_sport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_8"
+            android:layout_marginTop="@dimen/space_8"
+            android:layout_marginEnd="@dimen/space_8"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="NBA Basketball" />
+
+        <TextView
+            android:id="@+id/tv_strevent"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextIcon"
+            android:textSize="@dimen/size_10"
+            app:layout_constraintEnd_toEndOf="@+id/tv_league_sport"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_league_sport"
+            app:layout_constraintTop_toBottomOf="@+id/tv_league_sport"
+            tools:text="Orlando Magic vs San Antonio Spurs" />
+
+        <TextView
+            android:id="@+id/tv_date_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_3"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextIcon"
+            android:textSize="@dimen/size_6"
+            app:layout_constraintEnd_toEndOf="@+id/tv_strevent"
+            app:layout_constraintStart_toStartOf="@+id/tv_strevent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_strevent"
+            tools:text="2019-11-15 / 23:00:00" />
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_16"
+            android:text="@string/str_doubledot"
+            android:textAlignment="center"
+            android:textColor="@color/colorTextIcon"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_home_score"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_8"
+            android:maxLines="1"
+            android:textAlignment="textEnd"
+            android:textColor="@color/colorTextIcon"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+            app:layout_constraintEnd_toStartOf="@+id/textView4"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/imgv_hometeam"
+            app:layout_constraintTop_toTopOf="@+id/textView4"
+            tools:text="99" />
+
+        <ImageView
+            android:id="@+id/imgv_hometeam"
+            android:layout_width="70dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="@dimen/space_8"
+            android:contentDescription="@string/todo"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+            app:layout_constraintEnd_toEndOf="@+id/tv_hometeam"
+            app:layout_constraintStart_toStartOf="@+id/tv_hometeam"
+            app:layout_constraintTop_toTopOf="@id/textView4"
+            tools:src="@drawable/english_premier_league" />
+
+        <ProgressBar
+            android:id="@+id/prog_tim_home"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgv_hometeam"
+            app:layout_constraintEnd_toEndOf="@+id/imgv_hometeam"
+            app:layout_constraintStart_toStartOf="@+id/imgv_hometeam"
+            app:layout_constraintTop_toTopOf="@+id/imgv_hometeam" />
+
+        <TextView
+            android:id="@+id/tv_hometeam"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_8"
+            android:layout_marginTop="@dimen/space_8"
+            android:layout_marginEnd="@dimen/space_10"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintEnd_toStartOf="@+id/textView4"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgv_hometeam"
+            tools:text="Orlando Magic" />
+
+        <TextView
+            android:id="@+id/tv_away_score"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_8"
+            android:maxLines="1"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorTextIcon"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+            app:layout_constraintEnd_toStartOf="@+id/imgv_awayteam"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toTopOf="@+id/textView4"
+            tools:text="11" />
+
+        <ImageView
+            android:id="@+id/imgv_awayteam"
+            android:layout_width="70dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="@dimen/space_8"
+            android:contentDescription="@string/todo"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+            app:layout_constraintEnd_toEndOf="@+id/tv_awayteam"
+            app:layout_constraintStart_toStartOf="@+id/tv_awayteam"
+            app:layout_constraintTop_toTopOf="@+id/textView4"
+            tools:src="@drawable/english_premier_league" />
+
+        <ProgressBar
+            android:id="@+id/prog_tim_away"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgv_awayteam"
+            app:layout_constraintEnd_toEndOf="@+id/imgv_awayteam"
+            app:layout_constraintStart_toEndOf="@+id/tv_away_score"
+            app:layout_constraintTop_toTopOf="@+id/imgv_awayteam" />
+
+        <TextView
+            android:id="@+id/tv_awayteam"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="@dimen/space_8"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/imgv_awayteam"
+            tools:text="San Antonio Spurs" />
+
+        <TextView
+            android:id="@+id/tv_ft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_8"
+            android:text="@string/ft"
+            android:textColor="@color/colorTextIcon"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/textView4"
+            app:layout_constraintStart_toStartOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
