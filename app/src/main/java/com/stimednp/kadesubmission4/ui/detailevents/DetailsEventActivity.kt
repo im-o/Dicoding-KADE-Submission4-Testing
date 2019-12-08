@@ -1,4 +1,4 @@
-package com.stimednp.kadesubmission4.ui.xml.activity
+package com.stimednp.kadesubmission4.ui.detailevents
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -15,8 +15,8 @@ import com.stimednp.kadesubmission4.R
 import com.stimednp.kadesubmission4.api.ApiClient
 import com.stimednp.kadesubmission4.db.MydbOpenHelper.databaseLast
 import com.stimednp.kadesubmission4.db.MydbOpenHelper.databaseNext
-import com.stimednp.kadesubmission4.model.EventsLeagues
-import com.stimednp.kadesubmission4.model.Favorites
+import com.stimednp.kadesubmission4.model.DataEventLeagues
+import com.stimednp.kadesubmission4.model.DataFavorites
 import com.stimednp.kadesubmission4.util.CustomesUI
 import com.stimednp.kadesubmission4.util.invisible
 import com.stimednp.kadesubmission4.util.visible
@@ -41,7 +41,7 @@ class DetailsEventActivity : AppCompatActivity() {
     private var keyIdSavePref = "my_key_default"
     private var menuItem: Menu? = null
 
-    private lateinit var eventsL: EventsLeagues
+    private lateinit var dataEventL: DataEventLeagues
     private var badgeTeamH: String? = null
     private var badgeTeamA: String? = null
 
@@ -93,29 +93,29 @@ class DetailsEventActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.add_tofav -> {
-                checkMyPref(eventsL.idEvent.toString())
+                checkMyPref(dataEventL.idEvent.toString())
             }
         }
         return super.onOptionsItemSelected(item)
     }
 
-    private fun addtoFavoriteLast(listItem: EventsLeagues, badgeH: String, badgeA: String) {
+    private fun addtoFavoriteLast(listItem: DataEventLeagues, badgeH: String, badgeA: String) {
         try {
             databaseLast.use {
                 insert(
-                    Favorites.TABLE_FAVORITE,
-                    Favorites.ID_EVENT to listItem.idEvent,
-                    Favorites.STR_DATEEV to listItem.dateEvent,
-                    Favorites.STR_TIMEEV to listItem.strTime,
-                    Favorites.STR_EVENT to listItem.strEvent,
-                    Favorites.STR_SPORT to listItem.strSport,
-                    Favorites.STR_LEAGUE to listItem.strLeague,
-                    Favorites.STR_TEAMH to listItem.strHomeTeam,
-                    Favorites.STR_TEAMA to listItem.strAwayTeam,
-                    Favorites.INT_SCOREH to listItem.intHomeScore,
-                    Favorites.INT_SCOREA to listItem.intAwayScore,
-                    Favorites.STR_BADGEH to badgeH,
-                    Favorites.STR_BADGEA to badgeA
+                    DataFavorites.TABLE_FAVORITE,
+                    DataFavorites.ID_EVENT to listItem.idEvent,
+                    DataFavorites.STR_DATEEV to listItem.dateEvent,
+                    DataFavorites.STR_TIMEEV to listItem.strTime,
+                    DataFavorites.STR_EVENT to listItem.strEvent,
+                    DataFavorites.STR_SPORT to listItem.strSport,
+                    DataFavorites.STR_LEAGUE to listItem.strLeague,
+                    DataFavorites.STR_TEAMH to listItem.strHomeTeam,
+                    DataFavorites.STR_TEAMA to listItem.strAwayTeam,
+                    DataFavorites.INT_SCOREH to listItem.intHomeScore,
+                    DataFavorites.INT_SCOREA to listItem.intAwayScore,
+                    DataFavorites.STR_BADGEH to badgeH,
+                    DataFavorites.STR_BADGEA to badgeA
                 )
             }
             toast("Sukses tambah ke favorite")
@@ -125,23 +125,23 @@ class DetailsEventActivity : AppCompatActivity() {
         }
     }
 
-    private fun addtoFavoriteNext(listItem: EventsLeagues, badgeH: String, badgeA: String) {
+    private fun addtoFavoriteNext(listItem: DataEventLeagues, badgeH: String, badgeA: String) {
         try {
             databaseNext.use {
                 insert(
-                    Favorites.TABLE_FAVORITE,
-                    Favorites.ID_EVENT to listItem.idEvent,
-                    Favorites.STR_DATEEV to listItem.dateEvent,
-                    Favorites.STR_TIMEEV to listItem.strTime,
-                    Favorites.STR_EVENT to listItem.strEvent,
-                    Favorites.STR_SPORT to listItem.strSport,
-                    Favorites.STR_LEAGUE to listItem.strLeague,
-                    Favorites.STR_TEAMH to listItem.strHomeTeam,
-                    Favorites.STR_TEAMA to listItem.strAwayTeam,
-                    Favorites.INT_SCOREH to listItem.intHomeScore,
-                    Favorites.INT_SCOREA to listItem.intAwayScore,
-                    Favorites.STR_BADGEH to badgeH,
-                    Favorites.STR_BADGEA to badgeA
+                    DataFavorites.TABLE_FAVORITE,
+                    DataFavorites.ID_EVENT to listItem.idEvent,
+                    DataFavorites.STR_DATEEV to listItem.dateEvent,
+                    DataFavorites.STR_TIMEEV to listItem.strTime,
+                    DataFavorites.STR_EVENT to listItem.strEvent,
+                    DataFavorites.STR_SPORT to listItem.strSport,
+                    DataFavorites.STR_LEAGUE to listItem.strLeague,
+                    DataFavorites.STR_TEAMH to listItem.strHomeTeam,
+                    DataFavorites.STR_TEAMA to listItem.strAwayTeam,
+                    DataFavorites.INT_SCOREH to listItem.intHomeScore,
+                    DataFavorites.INT_SCOREA to listItem.intAwayScore,
+                    DataFavorites.STR_BADGEH to badgeH,
+                    DataFavorites.STR_BADGEA to badgeA
                 )
             }
             toast("Sukses tambah ke favorite")
@@ -151,13 +151,13 @@ class DetailsEventActivity : AppCompatActivity() {
         }
     }
 
-    private fun removeFavoriteLast(listItem: EventsLeagues) {
+    private fun removeFavoriteLast(listItem: DataEventLeagues) {
         val id: String = listItem.idEvent.toString()
         try {
             databaseLast.use {
                 delete(
-                    Favorites.TABLE_FAVORITE,
-                    "(${Favorites.ID_EVENT} = {id})",
+                    DataFavorites.TABLE_FAVORITE,
+                    "(${DataFavorites.ID_EVENT} = {id})",
                     "id" to id
                 )
             }
@@ -168,13 +168,13 @@ class DetailsEventActivity : AppCompatActivity() {
         }
     }
 
-    private fun removeFavoriteNext(listItem: EventsLeagues) {
+    private fun removeFavoriteNext(listItem: DataEventLeagues) {
         val id: String = listItem.idEvent.toString()
         try {
             databaseNext.use {
                 delete(
-                    Favorites.TABLE_FAVORITE,
-                    "(${Favorites.ID_EVENT} = {id})",
+                    DataFavorites.TABLE_FAVORITE,
+                    "(${DataFavorites.ID_EVENT} = {id})",
                     "id" to id
                 )
             }
@@ -191,18 +191,18 @@ class DetailsEventActivity : AppCompatActivity() {
         if (isFavorite) { //delete data
             setPrefById(idEvent, false)
             changeIconFavorite(idEvent)
-            if (eventsL.intHomeScore != null && eventsL.intAwayScore != null) {
-                removeFavoriteLast(eventsL)
+            if (dataEventL.intHomeScore != null && dataEventL.intAwayScore != null) {
+                removeFavoriteLast(dataEventL)
             } else {
-                removeFavoriteNext(eventsL)
+                removeFavoriteNext(dataEventL)
             }
         } else { //insert data
             setPrefById(idEvent, true)
             changeIconFavorite(idEvent)
-            if (eventsL.intHomeScore != null && eventsL.intAwayScore != null) {
-                addtoFavoriteLast(eventsL, badgeTeamH.toString(), badgeTeamA.toString())
+            if (dataEventL.intHomeScore != null && dataEventL.intAwayScore != null) {
+                addtoFavoriteLast(dataEventL, badgeTeamH.toString(), badgeTeamA.toString())
             } else {
-                addtoFavoriteNext(eventsL, badgeTeamH.toString(), badgeTeamA.toString())
+                addtoFavoriteNext(dataEventL, badgeTeamH.toString(), badgeTeamA.toString())
             }
         }
     }
@@ -228,8 +228,8 @@ class DetailsEventActivity : AppCompatActivity() {
         editor.apply()
     }
 
-    private fun setData(ev: EventsLeagues) {
-        eventsL = ev
+    private fun setData(ev: DataEventLeagues) {
+        dataEventL = ev
 
         val urlimgH = "$badgeTeamH/preview"
         val urlimgA = "$badgeTeamA/preview"

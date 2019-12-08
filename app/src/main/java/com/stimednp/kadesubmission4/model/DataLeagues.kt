@@ -8,7 +8,7 @@ import kotlinx.android.parcel.Parcelize
  */
 
 @Parcelize
-data class Leagues(
+data class DataLeagues(
     var idLeague: String?,
     var strSport: String?,
     var strLeague: String?,

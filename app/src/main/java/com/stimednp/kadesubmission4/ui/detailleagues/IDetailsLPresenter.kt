@@ -5,5 +5,5 @@ package com.stimednp.kadesubmission4.ui.detailleagues
  */
 
 interface IDetailsLPresenter {
-    fun getLeaguesDetail()
+    fun getLeaguesDetail(id: String?)
 }

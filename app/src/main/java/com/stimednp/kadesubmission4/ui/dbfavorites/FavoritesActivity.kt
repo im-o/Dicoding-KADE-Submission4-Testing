@@ -1,11 +1,11 @@
-package com.stimednp.kadesubmission4.ui.xml.activity
+package com.stimednp.kadesubmission4.ui.dbfavorites
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.stimednp.kadesubmission4.R
 import com.stimednp.kadesubmission4.ui.adapter.ViewPagerAdapter
-import com.stimednp.kadesubmission4.ui.xml.fragment.FavLastmFragment
-import com.stimednp.kadesubmission4.ui.xml.fragment.FavNextmFragment
+import com.stimednp.kadesubmission4.ui.dbfavorites.fragment.FavLastmFragment
+import com.stimednp.kadesubmission4.ui.dbfavorites.fragment.FavNextmFragment
 import kotlinx.android.synthetic.main.activity_favorites.*
 
 class FavoritesActivity : AppCompatActivity() {

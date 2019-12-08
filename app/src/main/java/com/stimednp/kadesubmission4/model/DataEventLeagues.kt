@@ -8,8 +8,7 @@ import kotlinx.android.parcel.Parcelize
  */
 
 
-@Parcelize
-data class EventsLeagues(
+data class DataEventLeagues(
     var idEvent: String?,
     var idLeague: String?,
     var idHomeTeam: Int?,
@@ -46,4 +45,4 @@ data class EventsLeagues(
     var intAwayShots: Int?,
     var dateEvent: String?,
     var strTime: String?
-) : Parcelable
+)

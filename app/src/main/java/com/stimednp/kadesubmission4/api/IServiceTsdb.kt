@@ -33,11 +33,11 @@ interface IServiceTsdb {
 
     //detail team home
     @GET("api/v1/json/1/lookupteam.php")
-    fun getDetailTeamH(@Query("id") idTeam: Int?): Deferred<Response<ResponseTeamsH>>
+    fun getDetailTeamH(@Query("id") idTeam: Int?): Deferred<Response<ResponseTeams>>
 
     //detail team away
     @GET("api/v1/json/1/lookupteam.php")
-    fun getDetailTeamA(@Query("id") idTeam: Int?): Deferred<Response<ResponseTeamsA>>
+    fun getDetailTeamA(@Query("id") idTeam: Int?): Deferred<Response<ResponseTeams>>
 
     //detailEvent
     @GET("api/v1/json/1/lookupevent.php")

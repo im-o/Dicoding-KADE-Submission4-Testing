@@ -9,9 +9,9 @@ import androidx.fragment.app.FragmentPagerAdapter
  * Created by rivaldy on 11/13/2019.
  */
 
-class ViewPagerAdapter(val context: Context, val listStr: List<Int>, val listFrag: List<Fragment>, fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+class ViewPagerAdapter(val context: Context, val listStr: List<Int>, val listFrag: List<Any>, fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
     override fun getItem(position: Int): Fragment {
-        return listFrag[position]
+        return listFrag[position] as Fragment
     }
 
     override fun getCount(): Int {

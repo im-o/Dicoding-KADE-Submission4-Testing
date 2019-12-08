@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import com.stimednp.kadesubmission4.R
-import com.stimednp.kadesubmission4.model.EventsLeagues
-import com.stimednp.kadesubmission4.model.TeamsBadge
-import com.stimednp.kadesubmission4.ui.xml.activity.DetailsEventActivity
+import com.stimednp.kadesubmission4.model.DataEventLeagues
+import com.stimednp.kadesubmission4.model.DataTeamsBadge
+import com.stimednp.kadesubmission4.ui.detailevents.DetailsEventActivity
 import com.stimednp.kadesubmission4.util.CustomesUI
 import com.stimednp.kadesubmission4.util.invisible
 import kotlinx.android.synthetic.main.item_event_match.view.*
@@ -21,8 +21,8 @@ import org.jetbrains.anko.startActivity
  */
 
 class EventMatchAdapter(
-    private val context: Context, private val items: ArrayList<EventsLeagues>,
-    private val badgesH: ArrayList<TeamsBadge>, private val badgesA: ArrayList<TeamsBadge>
+    private val context: Context?, private val items: ArrayList<DataEventLeagues>,
+    private val badgesH: ArrayList<DataTeamsBadge>, private val badgesA: ArrayList<DataTeamsBadge>
 ) :
     RecyclerView.Adapter<EventMatchAdapter.EventMatchViewHolder>() {
 
@@ -35,7 +35,7 @@ class EventMatchAdapter(
     override fun onBindViewHolder(holder: EventMatchViewHolder, position: Int) {
         holder.bindItem(items[position], badgesH[position], badgesA[position])
         holder.view.setOnClickListener() {
-            context.startActivity<DetailsEventActivity>(
+            context?.startActivity<DetailsEventActivity>(
                 DetailsEventActivity.EXTRA_DATA_EVENT to items[position].idEvent,
                 DetailsEventActivity.EXTRA_BADGEH to badgesH[position].strTeamBadge,
                 DetailsEventActivity.EXTRA_BADGEA to badgesA[position].strTeamBadge
@@ -44,7 +44,7 @@ class EventMatchAdapter(
     }
 
     class EventMatchViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-        fun bindItem(itemsE: EventsLeagues?, badgesH: TeamsBadge?, badgesA: TeamsBadge?) {
+        fun bindItem(itemsE: DataEventLeagues?, badgesH: DataTeamsBadge?, badgesA: DataTeamsBadge?) {
             val urlimgH = "${badgesH?.strTeamBadge}/preview"
             val urlimgA = "${badgesA?.strTeamBadge}/preview"
             val dateChange = CustomesUI.changeDateFormat(itemsE?.dateEvent!!, itemsE.strTime!!)

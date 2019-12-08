@@ -2,7 +2,7 @@ package com.stimednp.kadesubmission4.presenter.main
 
 import android.annotation.SuppressLint
 import com.stimednp.kadesubmission4.api.ApiClient
-import com.stimednp.kadesubmission4.model.Leagues
+import com.stimednp.kadesubmission4.model.DataLeagues
 import com.stimednp.kadesubmission4.model.ResponseLeagues
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 
 class MainRepository() {
     private val tsdbService = ApiClient.iServiceTsdb
-    private val items: ArrayList<Leagues> = ArrayList()
+    private val items: ArrayList<DataLeagues> = ArrayList()
     private var sizeItems: Int? = null
 
     fun getIdListLeague(callback: IMainRepositoryCallback<ResponseLeagues>) {
@@ -34,7 +34,7 @@ class MainRepository() {
     }
 
     @SuppressLint("DefaultLocale")
-    fun filterById(leagues: ArrayList<Leagues>?, callbackMain: IMainRepositoryCallback<ResponseLeagues>) {
+    fun filterById(leagues: ArrayList<DataLeagues>?, callbackMain: IMainRepositoryCallback<ResponseLeagues>) {
         val listIdLeagues: ArrayList<String> = ArrayList()
         for (i in leagues?.indices!!) {
             val sportSoccer = leagues[i].strSport?.toLowerCase()

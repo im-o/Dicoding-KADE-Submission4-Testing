@@ -5,14 +5,14 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.stimednp.kadesubmission4.R
-import com.stimednp.kadesubmission4.model.Leagues
+import com.stimednp.kadesubmission4.model.DataLeagues
 import com.stimednp.kadesubmission4.presenter.main.MainRepository
 import com.stimednp.kadesubmission4.ui.main.anko.MainUI
 import com.stimednp.kadesubmission4.ui.main.anko.MainUI.Companion.rv_main
 import com.stimednp.kadesubmission4.ui.main.anko.MainUI.Companion.swipeRefresh
 import com.stimednp.kadesubmission4.ui.main.anko.MainUI.Companion.tbar_main
 import com.stimednp.kadesubmission4.ui.main.anko.MainUI.Companion.tv_nodata
-import com.stimednp.kadesubmission4.ui.xml.activity.FavoritesActivity
+import com.stimednp.kadesubmission4.ui.dbfavorites.FavoritesActivity
 import com.stimednp.kadesubmission4.util.invisible
 import com.stimednp.kadesubmission4.util.visible
 import org.jetbrains.anko.setContentView
@@ -21,7 +21,7 @@ import org.jetbrains.anko.support.v4.onRefresh
 import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity(), IMainView {
-    var leagueList = ArrayList<Leagues>()
+    var leagueList = ArrayList<DataLeagues>()
     private lateinit var mainPresenter: IMainPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,12 +58,17 @@ class MainActivity : AppCompatActivity(), IMainView {
         mainPresenter.getLeaguesData()
     }
 
-    private fun setAdapter(leagues: ArrayList<Leagues>) {
+    private fun setAdapter(leagues: ArrayList<DataLeagues>) {
+        leagueList.clear()
         leagueList.addAll(leagues)
         rv_main.adapter?.notifyDataSetChanged()
     }
 
-    override fun showMessage(text: String) {
+    override fun showMsgSucces(text: String) {
+        toast(text)
+    }
+
+    override fun showMsgFail(text: String) {
         toast(text)
     }
 
@@ -72,15 +77,19 @@ class MainActivity : AppCompatActivity(), IMainView {
         tv_nodata.visible()
     }
 
-    override fun onDataLoaded(data: ArrayList<Leagues>) {
+    override fun hideTextEmpty() {
+        tv_nodata.invisible()
+    }
+
+    override fun onDataLoaded(data: ArrayList<DataLeagues>) {
         leagueList.clear()
+        hideTextEmpty()
         setAdapter(data)
-        onHideLoading()
     }
 
     override fun onDataError() {
-        showTextEmpty("Failed Load data")
-        showMessage("Something Error")
+//        showMsgFail("Something Error!")
+        showTextEmpty("No data show!!")
     }
 
     override fun onShowLoading() {
@@ -90,7 +99,6 @@ class MainActivity : AppCompatActivity(), IMainView {
 
     override fun onHideLoading() {
         swipeRefresh.isRefreshing = false
-        tv_nodata.invisible()
     }
 
 }

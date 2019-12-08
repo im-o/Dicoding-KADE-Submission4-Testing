@@ -11,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.appbar.AppBarLayout
 import com.stimednp.kadesubmission4.R
 import com.stimednp.kadesubmission4.R.color.*
-import com.stimednp.kadesubmission4.model.Leagues
+import com.stimednp.kadesubmission4.model.DataLeagues
 import com.stimednp.kadesubmission4.ui.adapter.HomeAdapter
 import com.stimednp.kadesubmission4.ui.detailleagues.DetailsLeaguesActivity
 import com.stimednp.kadesubmission4.ui.main.MainActivity
@@ -26,7 +26,7 @@ import org.jetbrains.anko.support.v4.swipeRefreshLayout
  * Created by rivaldy on 11/10/2019.
  */
 
-class MainUI(val items: ArrayList<Leagues>) : AnkoComponent<MainActivity> {
+class MainUI(val items: ArrayList<DataLeagues>) : AnkoComponent<MainActivity> {
     companion object {
         lateinit var rv_main: RecyclerView
         lateinit var tv_nodata: TextView
@@ -59,11 +59,10 @@ class MainUI(val items: ArrayList<Leagues>) : AnkoComponent<MainActivity> {
                         setHasFixedSize(true)
                         layoutManager = LinearLayoutManager(context)
                         adapter = HomeAdapter(items) {
-                            startActivity<DetailsLeaguesActivity>(DetailsLeaguesActivity.EXTRA_DATA to it)
+                            startActivity<DetailsLeaguesActivity>(DetailsLeaguesActivity.EXTRA_ID to it.idLeague)
                         }
                     }
                     tv_nodata = textView {
-                        text = resources.getString(R.string.str_nodata)
                         textColor = getColor(context, colorAccent)
                         textSize = 32f
                         typeface = Typeface.DEFAULT_BOLD

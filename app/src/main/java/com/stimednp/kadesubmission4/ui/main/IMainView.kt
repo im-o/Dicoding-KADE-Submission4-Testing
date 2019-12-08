@@ -9,6 +9,8 @@ import com.stimednp.kadesubmission4.presenter.main.IMainRepositoryCallback
  */
 
 interface IMainView: IMainRepositoryCallback<ResponseLeagues>, IView {
-    fun showMessage(text: String)
+    fun showMsgSucces(text: String)
+    fun showMsgFail(text: String)
     fun showTextEmpty(text: String)
+    fun hideTextEmpty()
 }

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.xml.fragment.NextMatchFragment">
+    tools:context=".ui.detailleagues.fragmentnext.NextMatchFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_nextmatch"
@@ -30,10 +30,8 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="@dimen/space_55"
         android:padding="@dimen/space_32"
-        android:text="@string/str_nomatch"
+        tools:text="@string/str_nomatch"
         android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="@color/colorDividerDark"
-        android:textStyle="bold"
-        android:visibility="invisible" />
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"/>
 </RelativeLayout>

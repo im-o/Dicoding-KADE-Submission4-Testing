@@ -2,20 +2,20 @@ package com.stimednp.kadesubmission4.db
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
-import com.stimednp.kadesubmission4.model.Favorites.Companion.ID
-import com.stimednp.kadesubmission4.model.Favorites.Companion.ID_EVENT
-import com.stimednp.kadesubmission4.model.Favorites.Companion.INT_SCOREA
-import com.stimednp.kadesubmission4.model.Favorites.Companion.INT_SCOREH
-import com.stimednp.kadesubmission4.model.Favorites.Companion.STR_BADGEA
-import com.stimednp.kadesubmission4.model.Favorites.Companion.STR_BADGEH
-import com.stimednp.kadesubmission4.model.Favorites.Companion.STR_DATEEV
-import com.stimednp.kadesubmission4.model.Favorites.Companion.STR_EVENT
-import com.stimednp.kadesubmission4.model.Favorites.Companion.STR_LEAGUE
-import com.stimednp.kadesubmission4.model.Favorites.Companion.STR_SPORT
-import com.stimednp.kadesubmission4.model.Favorites.Companion.STR_TEAMA
-import com.stimednp.kadesubmission4.model.Favorites.Companion.STR_TEAMH
-import com.stimednp.kadesubmission4.model.Favorites.Companion.STR_TIMEEV
-import com.stimednp.kadesubmission4.model.Favorites.Companion.TABLE_FAVORITE
+import com.stimednp.kadesubmission4.model.DataFavorites.Companion.ID
+import com.stimednp.kadesubmission4.model.DataFavorites.Companion.ID_EVENT
+import com.stimednp.kadesubmission4.model.DataFavorites.Companion.INT_SCOREA
+import com.stimednp.kadesubmission4.model.DataFavorites.Companion.INT_SCOREH
+import com.stimednp.kadesubmission4.model.DataFavorites.Companion.STR_BADGEA
+import com.stimednp.kadesubmission4.model.DataFavorites.Companion.STR_BADGEH
+import com.stimednp.kadesubmission4.model.DataFavorites.Companion.STR_DATEEV
+import com.stimednp.kadesubmission4.model.DataFavorites.Companion.STR_EVENT
+import com.stimednp.kadesubmission4.model.DataFavorites.Companion.STR_LEAGUE
+import com.stimednp.kadesubmission4.model.DataFavorites.Companion.STR_SPORT
+import com.stimednp.kadesubmission4.model.DataFavorites.Companion.STR_TEAMA
+import com.stimednp.kadesubmission4.model.DataFavorites.Companion.STR_TEAMH
+import com.stimednp.kadesubmission4.model.DataFavorites.Companion.STR_TIMEEV
+import com.stimednp.kadesubmission4.model.DataFavorites.Companion.TABLE_FAVORITE
 import org.jetbrains.anko.db.*
 
 /**

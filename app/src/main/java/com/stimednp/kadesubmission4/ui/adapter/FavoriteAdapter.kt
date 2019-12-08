@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import com.stimednp.kadesubmission4.R
-import com.stimednp.kadesubmission4.model.Favorites
-import com.stimednp.kadesubmission4.ui.xml.activity.DetailsEventActivity
+import com.stimednp.kadesubmission4.model.DataFavorites
+import com.stimednp.kadesubmission4.ui.detailevents.DetailsEventActivity
 import com.stimednp.kadesubmission4.util.CustomesUI
 import com.stimednp.kadesubmission4.util.invisible
 import kotlinx.android.synthetic.main.item_event_match.view.*
@@ -21,7 +21,7 @@ import org.jetbrains.anko.startActivity
 
 class FavoriteAdapter(
     private val context: Context,
-    private val items: ArrayList<Favorites>
+    private val items: ArrayList<DataFavorites>
 ) : RecyclerView.Adapter<FavoriteAdapter.MatchViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MatchViewHolder {
@@ -48,7 +48,7 @@ class FavoriteAdapter(
     }
 
     class MatchViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-        fun bindItem(itemsE: Favorites?) {
+        fun bindItem(itemsE: DataFavorites?) {
             val urlimgH = "${itemsE?.strBadgeH}/preview"
             val urlimgA = "${itemsE?.strBadgeA}/preview"
             val dateChange = CustomesUI.changeDateFormat(itemsE?.dateEvent!!, itemsE.strTime!!)
