@@ -11,7 +11,7 @@ import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import com.stimednp.kadesubmission4.R
 import com.stimednp.kadesubmission4.model.Leagues
-import com.stimednp.kadesubmission4.ui.anko.ItemLeaguesUI
+import com.stimednp.kadesubmission4.ui.main.anko.ItemLeaguesUI
 import com.stimednp.kadesubmission4.util.invisible
 import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.find

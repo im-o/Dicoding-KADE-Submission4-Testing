@@ -1,4 +1,4 @@
-package com.stimednp.kadesubmission4.ui.xml.activity
+package com.stimednp.kadesubmission4.ui.detailleagues
 
 import android.content.Intent
 import android.net.Uri
@@ -12,6 +12,7 @@ import com.squareup.picasso.Picasso
 import com.stimednp.kadesubmission4.R
 import com.stimednp.kadesubmission4.model.Leagues
 import com.stimednp.kadesubmission4.ui.adapter.ViewPagerAdapter
+import com.stimednp.kadesubmission4.ui.xml.activity.SearchActivity
 import com.stimednp.kadesubmission4.ui.xml.fragment.LastMatchFragment
 import com.stimednp.kadesubmission4.ui.xml.fragment.NextMatchFragment
 import kotlinx.android.synthetic.main.activity_details_leagues.*

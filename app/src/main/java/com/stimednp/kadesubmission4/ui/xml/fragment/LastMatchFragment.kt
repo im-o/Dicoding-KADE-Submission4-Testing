@@ -13,7 +13,7 @@ import com.stimednp.kadesubmission4.api.ApiClient
 import com.stimednp.kadesubmission4.model.EventsLeagues
 import com.stimednp.kadesubmission4.model.TeamsBadge
 import com.stimednp.kadesubmission4.ui.adapter.EventMatchAdapter
-import com.stimednp.kadesubmission4.ui.xml.activity.DetailsLeaguesActivity
+import com.stimednp.kadesubmission4.ui.detailleagues.DetailsLeaguesActivity
 import com.stimednp.kadesubmission4.util.gone
 import com.stimednp.kadesubmission4.util.visible
 import kotlinx.android.synthetic.main.fragment_last_match.*

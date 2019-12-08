@@ -14,8 +14,8 @@
         <activity android:name="com.stimednp.kadesubmission4.ui.xml.activity.FavoritesActivity"></activity>
         <activity android:name="com.stimednp.kadesubmission4.ui.xml.activity.SearchActivity" />
         <activity android:name="com.stimednp.kadesubmission4.ui.xml.activity.DetailsEventActivity" />
-        <activity android:name="com.stimednp.kadesubmission4.ui.xml.activity.DetailsLeaguesActivity" />
-        <activity android:name="com.stimednp.kadesubmission4.ui.anko.MainActivity">
+        <activity android:name="com.stimednp.kadesubmission4.ui.detailleagues.DetailsLeaguesActivity" />
+        <activity android:name="com.stimednp.kadesubmission4.ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

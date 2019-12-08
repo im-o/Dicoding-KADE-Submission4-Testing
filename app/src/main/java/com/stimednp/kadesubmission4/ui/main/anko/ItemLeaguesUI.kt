@@ -1,4 +1,4 @@
-package com.stimednp.kadesubmission4.ui.anko
+package com.stimednp.kadesubmission4.ui.main.anko
 
 import android.graphics.Typeface
 import android.text.TextUtils

@@ -17,7 +17,7 @@ interface IServiceTsdb {
 
     //detail liga
     @GET("api/v1/json/1/lookupleague.php")
-    fun getDetailById(@Query("id") idLiga: Int?): Deferred<Response<ResponseLeagues>>
+    fun getDetailById(@Query("id") idLiga: String?): Deferred<Response<ResponseLeagues>>
 
     //next match
     @GET("api/v1/json/1/eventsnextleague.php")

@@ -1,4 +1,4 @@
-package com.stimednp.kadesubmission4.ui.anko
+package com.stimednp.kadesubmission4.ui.main.anko
 
 import android.graphics.Typeface
 import android.view.View
@@ -13,7 +13,8 @@ import com.stimednp.kadesubmission4.R
 import com.stimednp.kadesubmission4.R.color.*
 import com.stimednp.kadesubmission4.model.Leagues
 import com.stimednp.kadesubmission4.ui.adapter.HomeAdapter
-import com.stimednp.kadesubmission4.ui.xml.activity.DetailsLeaguesActivity
+import com.stimednp.kadesubmission4.ui.detailleagues.DetailsLeaguesActivity
+import com.stimednp.kadesubmission4.ui.main.MainActivity
 import org.jetbrains.anko.*
 import org.jetbrains.anko.appcompat.v7.toolbar
 import org.jetbrains.anko.design.coordinatorLayout
@@ -49,7 +50,6 @@ class MainUI(val items: ArrayList<Leagues>) : AnkoComponent<MainActivity> {
 
             swipeRefresh = swipeRefreshLayout {
                 id = R.id.swipe_main
-                isRefreshing = true
                 setColorSchemeResources(colorAccent, colorTwitter, colorYoutube, colorFacebook)
                 relativeLayout {
                     lparams(matchParent, matchParent)
@@ -59,13 +59,12 @@ class MainUI(val items: ArrayList<Leagues>) : AnkoComponent<MainActivity> {
                         setHasFixedSize(true)
                         layoutManager = LinearLayoutManager(context)
                         adapter = HomeAdapter(items) {
-                            //                            startActivity<DetailsActivity>()
                             startActivity<DetailsLeaguesActivity>(DetailsLeaguesActivity.EXTRA_DATA to it)
                         }
                     }
                     tv_nodata = textView {
                         text = resources.getString(R.string.str_nodata)
-                        textColor = getColor(context, colorTextGrey)
+                        textColor = getColor(context, colorAccent)
                         textSize = 32f
                         typeface = Typeface.DEFAULT_BOLD
                         textAlignment = View.TEXT_ALIGNMENT_CENTER
