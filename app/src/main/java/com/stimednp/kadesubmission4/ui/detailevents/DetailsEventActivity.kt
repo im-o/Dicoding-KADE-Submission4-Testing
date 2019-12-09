@@ -12,25 +12,24 @@ import androidx.core.content.ContextCompat
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import com.stimednp.kadesubmission4.R
-import com.stimednp.kadesubmission4.api.ApiClient
 import com.stimednp.kadesubmission4.db.MydbOpenHelper.databaseLast
 import com.stimednp.kadesubmission4.db.MydbOpenHelper.databaseNext
 import com.stimednp.kadesubmission4.model.DataEventLeagues
 import com.stimednp.kadesubmission4.model.DataFavorites
+import com.stimednp.kadesubmission4.presenter.detailematch.DetailsERepository
 import com.stimednp.kadesubmission4.util.CustomesUI
 import com.stimednp.kadesubmission4.util.invisible
 import com.stimednp.kadesubmission4.util.visible
 import kotlinx.android.synthetic.main.activity_details_event.*
 import kotlinx.android.synthetic.main.item_header_statis.*
 import kotlinx.android.synthetic.main.items_body_statis.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import org.jetbrains.anko.db.delete
 import org.jetbrains.anko.db.insert
 import org.jetbrains.anko.toast
 
-class DetailsEventActivity : AppCompatActivity() {
+class DetailsEventActivity : AppCompatActivity(), IDetailsEView {
+    private lateinit var detailsEPresenter: DetailsEPresenter
+
     companion object {
         const val EXTRA_DATA_EVENT: String = "extra_data_event"
         const val EXTRA_BADGEH: String = "extra_badge_h"
@@ -54,7 +53,12 @@ class DetailsEventActivity : AppCompatActivity() {
         keyIdSavePref = eventId.toString()
 
         setToolbar()
-        getDetail(eventId)
+        getDetailMatch(eventId)
+    }
+
+    private fun getDetailMatch(eventId: String?) {
+        detailsEPresenter = DetailsEPresenter(this, DetailsERepository())
+        detailsEPresenter.getEventsDetail(eventId)
     }
 
     private fun setToolbar() {
@@ -66,21 +70,29 @@ class DetailsEventActivity : AppCompatActivity() {
         tbar_statis.setNavigationOnClickListener { finish() }
     }
 
-    private fun getDetail(idEvent: String?) {
-        val tsdbService = ApiClient.iServiceTsdb
-        GlobalScope.launch(Dispatchers.Main) {
-            val listDetail = tsdbService.getDetailEvent(idEvent)
-            try {
-                val response = listDetail.await()
-                if (response.isSuccessful) {
-                    val resbody = response.body()
-                    setData(resbody?.events!![0])
-                }
-            } catch (er: Exception) {
-                e("INIII", "ERRROR : ${er.message}")
-                runOnUiThread { }
-            }
-        }
+
+    override fun showMsgSucces(text: String) {
+        toast(text)
+    }
+
+    override fun showMsgFail(text: String) {
+        toast(text)
+    }
+
+    override fun onDataLoaded(data: DataEventLeagues) {
+        setData(data)
+    }
+
+    override fun onDataError() {
+        showMsgFail("Load data failed!")
+    }
+
+    override fun onShowLoading() {
+        //need this for future
+    }
+
+    override fun onHideLoading() {
+        //need this for future
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
