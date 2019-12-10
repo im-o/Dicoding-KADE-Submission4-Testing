@@ -6,16 +6,11 @@ import com.nhaarman.mockito_kotlin.verify
 import com.stimednp.kadesubmission4.model.DataEventLeagues
 import com.stimednp.kadesubmission4.model.DataTeamsBadge
 import com.stimednp.kadesubmission4.model.ResponseSearch
-import com.stimednp.kadesubmission4.presenter.detailematch.DetailsERepository
-import com.stimednp.kadesubmission4.ui.detailevents.DetailsEPresenter
-import com.stimednp.kadesubmission4.ui.detailevents.IDetailsEView
 import com.stimednp.kadesubmission4.ui.search.ISearchView
 import com.stimednp.kadesubmission4.ui.search.SearchPresenter
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
-
-import org.junit.Assert.*
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations

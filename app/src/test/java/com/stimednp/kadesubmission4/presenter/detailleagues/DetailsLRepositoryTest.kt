@@ -5,18 +5,11 @@ import com.nhaarman.mockito_kotlin.eq
 import com.nhaarman.mockito_kotlin.verify
 import com.stimednp.kadesubmission4.model.DataLeagues
 import com.stimednp.kadesubmission4.model.ResponseLeagues
-import com.stimednp.kadesubmission4.presenter.main.MainRepository
-import com.stimednp.kadesubmission4.ui.detailevents.DetailsEPresenter
-import com.stimednp.kadesubmission4.ui.detailevents.IDetailsEView
 import com.stimednp.kadesubmission4.ui.detailleagues.DetailsPresenter
 import com.stimednp.kadesubmission4.ui.detailleagues.IDetailsLView
-import com.stimednp.kadesubmission4.ui.main.IMainView
-import com.stimednp.kadesubmission4.ui.main.MainPresenter
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
-
-import org.junit.Assert.*
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
