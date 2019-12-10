@@ -2,17 +2,14 @@ package com.stimednp.kadesubmission4.presenter.search
 
 import android.annotation.SuppressLint
 import android.util.Log
-import com.stimednp.kadesubmission4.R
 import com.stimednp.kadesubmission4.api.ApiClient
 import com.stimednp.kadesubmission4.model.DataEventLeagues
 import com.stimednp.kadesubmission4.model.DataTeamsBadge
-import com.stimednp.kadesubmission4.model.ResponseEvents
 import com.stimednp.kadesubmission4.model.ResponseSearch
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import org.jetbrains.anko.toast
-import java.util.ArrayList
+import java.util.*
 
 /**
  * Created by rivaldy on 12/8/2019.

@@ -68,4 +68,19 @@ dependencies {
 
     //material design
     implementation 'com.google.android.material:material:1.0.0'
+
+    //Mockinto for testing
+    testImplementation 'org.mockito:mockito-core:3.0.0'
+    testImplementation 'org.mockito:mockito-inline:3.0.0'
+    testImplementation 'com.nhaarman:mockito-kotlin:1.5.0'
+
+    //instrument testing with Espreso
+    androidTestImplementation("com.android.support.test.espresso:espresso-contrib:2.2.2") {
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude group: 'com.android.support', module: 'design'
+        exclude group: 'com.android.support', module: 'recyclerview-v7'
+    }
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
 }

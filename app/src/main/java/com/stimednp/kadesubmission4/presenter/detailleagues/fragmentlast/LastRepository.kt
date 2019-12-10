@@ -1,5 +1,6 @@
 package com.stimednp.kadesubmission4.presenter.detailleagues.fragmentlast
 
+import android.util.Log.e
 import com.stimednp.kadesubmission4.api.ApiClient
 import com.stimednp.kadesubmission4.model.DataEventLeagues
 import com.stimednp.kadesubmission4.model.DataTeamsBadge
@@ -32,19 +33,17 @@ class LastRepository {
     private fun savetoArrays(events: ArrayList<DataEventLeagues>, callback: ILastRepositoryCallback<ResponseEvents>) {
         val badgeH = ArrayList<Int>()
         val badgeA = ArrayList<Int>()
-
         for (i in events.indices) {
             val teamH = events[i].idHomeTeam
             val teamA = events[i].idAwayTeam
-
             badgeH.add(teamH!!)
             badgeA.add(teamA!!)
         }
         setIdTeam(events, badgeH, badgeA, callback)
     }
 
-    private fun setIdTeam(events: ArrayList<DataEventLeagues>, teamH: ArrayList<Int>, teamA: ArrayList<Int>, callback: ILastRepositoryCallback<ResponseEvents>) {
-        val tsdbService = ApiClient.iServiceTsdb
+    fun setIdTeam(events: ArrayList<DataEventLeagues>, teamH: ArrayList<Int>, teamA: ArrayList<Int>, callback: ILastRepositoryCallback<ResponseEvents>) {
+//        e("INIII","HASILL X : teamH : $teamH\nteamA : $teamA")
         GlobalScope.launch(Dispatchers.Main) {
             val itemsH = ArrayList<DataTeamsBadge>()
             val itemsA = ArrayList<DataTeamsBadge>()

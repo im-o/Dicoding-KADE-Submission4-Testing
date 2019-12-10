@@ -1,6 +1,7 @@
 package com.stimednp.kadesubmission4.presenter.main
 
 import android.annotation.SuppressLint
+import android.util.Log.e
 import com.stimednp.kadesubmission4.api.ApiClient
 import com.stimednp.kadesubmission4.model.DataLeagues
 import com.stimednp.kadesubmission4.model.ResponseLeagues
@@ -26,6 +27,7 @@ class MainRepository() {
                     val responseBody = response.body()
                     val leagues = responseBody?.leagues
                     filterById(leagues, callback)
+                    e("INIII","HASIL 1 (leagues) : $leagues")
                 }
             } catch (er: Exception) {
                 callback.onDataError()
@@ -34,7 +36,7 @@ class MainRepository() {
     }
 
     @SuppressLint("DefaultLocale")
-    fun filterById(leagues: ArrayList<DataLeagues>?, callbackMain: IMainRepositoryCallback<ResponseLeagues>) {
+    private fun filterById(leagues: ArrayList<DataLeagues>?, callbackMain: IMainRepositoryCallback<ResponseLeagues>) {
         val listIdLeagues: ArrayList<String> = ArrayList()
         for (i in leagues?.indices!!) {
             val sportSoccer = leagues[i].strSport?.toLowerCase()
@@ -49,7 +51,7 @@ class MainRepository() {
         }
     }
 
-    fun getDataById(id: String?, callbackMain: IMainRepositoryCallback<ResponseLeagues>) {
+    private fun getDataById(id: String?, callbackMain: IMainRepositoryCallback<ResponseLeagues>) {
         GlobalScope.launch(Dispatchers.Main) {
             val listIdLeagues = tsdbService.getDetailById(id)
             try {
@@ -64,9 +66,10 @@ class MainRepository() {
         }
     }
 
-    fun filterList(callbackMain: IMainRepositoryCallback<ResponseLeagues>) {
+    private fun filterList(callbackMain: IMainRepositoryCallback<ResponseLeagues>) {
         if (items.size > 0){
             callbackMain.onDataLoaded(items)
+            e("INIII","HASIL 1 (items) : $items")
         } else callbackMain.onDataError()
     }
 }

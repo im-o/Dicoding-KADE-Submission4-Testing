@@ -15,10 +15,12 @@ class DetailsEPresenter(private val view: IDetailsEView, private val detailsERep
         detailsERepository.getDetailEvent(id.toString(), object : IDetailsERepositoryCallback<ResponseEvents> {
             override fun onDataLoaded(data: DataEventLeagues) {
                 view.onDataLoaded(data)
+                view.onHideLoading()
             }
 
             override fun onDataError() {
                 view.onDataError()
+                view.onHideLoading()
             }
 
         })
