@@ -11,8 +11,8 @@ import com.stimednp.kadesubmission4.R
 import com.stimednp.kadesubmission4.model.DataEventLeagues
 import com.stimednp.kadesubmission4.model.DataTeamsBadge
 import com.stimednp.kadesubmission4.ui.detailevents.DetailsEventActivity
-import com.stimednp.kadesubmission4.util.CustomesUI
-import com.stimednp.kadesubmission4.util.invisible
+import com.stimednp.kadesubmission4.utils.UtilsUI
+import com.stimednp.kadesubmission4.utils.invisible
 import kotlinx.android.synthetic.main.item_event_match.view.*
 import org.jetbrains.anko.startActivity
 
@@ -47,7 +47,7 @@ class EventMatchAdapter(
         fun bindItem(itemsE: DataEventLeagues?, badgesH: DataTeamsBadge?, badgesA: DataTeamsBadge?) {
             val urlimgH = "${badgesH?.strTeamBadge}/preview"
             val urlimgA = "${badgesA?.strTeamBadge}/preview"
-            val dateChange = CustomesUI.changeDateFormat(itemsE?.dateEvent!!, itemsE.strTime!!)
+            val dateChange = UtilsUI.changeDateFormat(itemsE?.dateEvent!!, itemsE.strTime!!)
 
             view.tv_league_sport.text = itemsE.strSport
             view.tv_strevent.text = itemsE.strEvent

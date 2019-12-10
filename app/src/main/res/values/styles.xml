@@ -10,11 +10,6 @@
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
     <style name="CustomeTabLayout" parent="Widget.Design.TabLayout">
         <item name="tabTextAppearance">@style/CustomeTextAppereance</item>
     </style>

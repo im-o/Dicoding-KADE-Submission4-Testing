@@ -1,6 +1,5 @@
 package com.stimednp.kadesubmission4.presenter.detailematch
 
-import android.util.Log
 import com.stimednp.kadesubmission4.api.ApiClient
 import com.stimednp.kadesubmission4.model.ResponseEvents
 import kotlinx.coroutines.Dispatchers
@@ -12,7 +11,7 @@ import kotlinx.coroutines.launch
  */
 
 class DetailsERepository {
-    fun getDetailEvent(idEvent: String, callback: IDetailsERepositoryCallback<ResponseEvents>){
+    fun getDetailEvent(idEvent: String, callback: IDetailsERepositoryCallback<ResponseEvents>) {
         val tsdbService = ApiClient.iServiceTsdb
         GlobalScope.launch(Dispatchers.Main) {
             val listDetail = tsdbService.getDetailEvent(idEvent)

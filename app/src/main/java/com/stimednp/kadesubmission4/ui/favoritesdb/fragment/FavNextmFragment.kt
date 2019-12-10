@@ -1,4 +1,4 @@
-package com.stimednp.kadesubmission4.ui.dbfavorites.fragment
+package com.stimednp.kadesubmission4.ui.favoritesdb.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import com.stimednp.kadesubmission4.R
 import com.stimednp.kadesubmission4.db.MydbOpenHelper.databaseNext
 import com.stimednp.kadesubmission4.model.DataFavorites
 import com.stimednp.kadesubmission4.ui.adapter.FavoriteAdapter
-import com.stimednp.kadesubmission4.util.visible
+import com.stimednp.kadesubmission4.utils.visible
 import kotlinx.android.synthetic.main.fragment_fav_nextm.*
 import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.select

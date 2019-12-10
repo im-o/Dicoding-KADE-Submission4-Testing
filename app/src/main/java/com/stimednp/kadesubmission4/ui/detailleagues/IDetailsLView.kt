@@ -8,7 +8,7 @@ import com.stimednp.kadesubmission4.presenter.detailleagues.IDetailsLRepositoryC
  * Created by rivaldy on 12/8/2019.
  */
 
-interface IDetailsLView: IDetailsLRepositoryCallback<ResponseLeagues>, IView {
+interface IDetailsLView : IDetailsLRepositoryCallback<ResponseLeagues>, IView {
     fun showMsgSucces(text: String)
     fun showMsgFail(text: String)
 }

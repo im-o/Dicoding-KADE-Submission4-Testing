@@ -10,8 +10,8 @@ import com.squareup.picasso.Picasso
 import com.stimednp.kadesubmission4.R
 import com.stimednp.kadesubmission4.model.DataFavorites
 import com.stimednp.kadesubmission4.ui.detailevents.DetailsEventActivity
-import com.stimednp.kadesubmission4.util.CustomesUI
-import com.stimednp.kadesubmission4.util.invisible
+import com.stimednp.kadesubmission4.utils.UtilsUI
+import com.stimednp.kadesubmission4.utils.invisible
 import kotlinx.android.synthetic.main.item_event_match.view.*
 import org.jetbrains.anko.startActivity
 
@@ -51,7 +51,7 @@ class FavoriteAdapter(
         fun bindItem(itemsE: DataFavorites?) {
             val urlimgH = "${itemsE?.strBadgeH}/preview"
             val urlimgA = "${itemsE?.strBadgeA}/preview"
-            val dateChange = CustomesUI.changeDateFormat(itemsE?.dateEvent!!, itemsE.strTime!!)
+            val dateChange = UtilsUI.changeDateFormat(itemsE?.dateEvent!!, itemsE.strTime!!)
 
             view.tv_league_sport.text = itemsE.strSport
             view.tv_strevent.text = itemsE.strEvent

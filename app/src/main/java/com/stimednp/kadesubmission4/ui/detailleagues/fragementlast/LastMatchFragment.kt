@@ -2,29 +2,21 @@ package com.stimednp.kadesubmission4.ui.detailleagues.fragementlast
 
 
 import android.os.Bundle
-import android.util.Log.e
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.stimednp.kadesubmission4.R
-import com.stimednp.kadesubmission4.api.ApiClient
 import com.stimednp.kadesubmission4.model.DataEventLeagues
 import com.stimednp.kadesubmission4.model.DataTeamsBadge
 import com.stimednp.kadesubmission4.presenter.detailleagues.fragmentlast.LastRepository
 import com.stimednp.kadesubmission4.ui.adapter.EventMatchAdapter
 import com.stimednp.kadesubmission4.ui.detailleagues.DetailsLeaguesActivity
-import com.stimednp.kadesubmission4.util.gone
-import com.stimednp.kadesubmission4.util.invisible
-import com.stimednp.kadesubmission4.util.visible
+import com.stimednp.kadesubmission4.utils.invisible
+import com.stimednp.kadesubmission4.utils.visible
 import kotlinx.android.synthetic.main.fragment_last_match.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import org.jetbrains.anko.support.v4.runOnUiThread
 import org.jetbrains.anko.support.v4.toast
-import org.jetbrains.anko.toast
 
 /**
  * A simple [Fragment] subclass.

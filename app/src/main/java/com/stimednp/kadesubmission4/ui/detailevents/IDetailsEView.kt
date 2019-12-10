@@ -8,7 +8,7 @@ import com.stimednp.kadesubmission4.presenter.detailematch.IDetailsERepositoryCa
  * Created by rivaldy on 12/9/2019.
  */
 
-interface IDetailsEView: IDetailsERepositoryCallback<ResponseEvents>, IView {
+interface IDetailsEView : IDetailsERepositoryCallback<ResponseEvents>, IView {
     fun showMsgSucces(text: String)
     fun showMsgFail(text: String)
 }

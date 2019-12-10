@@ -12,7 +12,7 @@ import com.squareup.picasso.Picasso
 import com.stimednp.kadesubmission4.R
 import com.stimednp.kadesubmission4.model.DataLeagues
 import com.stimednp.kadesubmission4.ui.main.anko.ItemLeaguesUI
-import com.stimednp.kadesubmission4.util.invisible
+import com.stimednp.kadesubmission4.utils.invisible
 import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.find
 

@@ -1,6 +1,9 @@
 package com.stimednp.kadesubmission4.api
 
-import com.stimednp.kadesubmission4.model.*
+import com.stimednp.kadesubmission4.model.ResponseEvents
+import com.stimednp.kadesubmission4.model.ResponseLeagues
+import com.stimednp.kadesubmission4.model.ResponseSearch
+import com.stimednp.kadesubmission4.model.ResponseTeams
 import kotlinx.coroutines.Deferred
 import retrofit2.Response
 import retrofit2.http.GET

@@ -2,7 +2,6 @@ package com.stimednp.kadesubmission4.ui.search
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log.e
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
@@ -13,8 +12,8 @@ import com.stimednp.kadesubmission4.model.DataEventLeagues
 import com.stimednp.kadesubmission4.model.DataTeamsBadge
 import com.stimednp.kadesubmission4.presenter.search.SearchRepository
 import com.stimednp.kadesubmission4.ui.adapter.EventMatchAdapter
-import com.stimednp.kadesubmission4.util.invisible
-import com.stimednp.kadesubmission4.util.visible
+import com.stimednp.kadesubmission4.utils.invisible
+import com.stimednp.kadesubmission4.utils.visible
 import kotlinx.android.synthetic.main.activity_search.*
 import org.jetbrains.anko.support.v4.onRefresh
 
@@ -106,7 +105,6 @@ class SearchActivity : AppCompatActivity(), ISearchView, SearchView.OnQueryTextL
         itemTeamsH.addAll(teamH)
         itemTeamsA.addAll(teamA)
         rv_search.adapter?.notifyDataSetChanged()
-        e("INIII", "HASIL : ${data.size} || ${teamH.size} || ${teamA.size}")
     }
 
     override fun onDataError() {

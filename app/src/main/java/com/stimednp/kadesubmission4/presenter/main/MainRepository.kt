@@ -1,7 +1,6 @@
 package com.stimednp.kadesubmission4.presenter.main
 
 import android.annotation.SuppressLint
-import android.util.Log.e
 import com.stimednp.kadesubmission4.api.ApiClient
 import com.stimednp.kadesubmission4.model.DataLeagues
 import com.stimednp.kadesubmission4.model.ResponseLeagues
@@ -27,7 +26,6 @@ class MainRepository() {
                     val responseBody = response.body()
                     val leagues = responseBody?.leagues
                     filterById(leagues, callback)
-                    e("INIII","HASIL 1 (leagues) : $leagues")
                 }
             } catch (er: Exception) {
                 callback.onDataError()
@@ -67,9 +65,8 @@ class MainRepository() {
     }
 
     private fun filterList(callbackMain: IMainRepositoryCallback<ResponseLeagues>) {
-        if (items.size > 0){
+        if (items.size > 0) {
             callbackMain.onDataLoaded(items)
-            e("INIII","HASIL 1 (items) : $items")
         } else callbackMain.onDataError()
     }
 }

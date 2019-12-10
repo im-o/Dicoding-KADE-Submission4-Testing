@@ -1,6 +1,5 @@
 package com.stimednp.kadesubmission4.presenter.detailleagues.fragmentlast
 
-import com.nhaarman.mockito_kotlin.any
 import com.nhaarman.mockito_kotlin.argumentCaptor
 import com.nhaarman.mockito_kotlin.eq
 import com.nhaarman.mockito_kotlin.verify
@@ -12,12 +11,9 @@ import com.stimednp.kadesubmission4.ui.detailleagues.fragementlast.LastMatchPres
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
-
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
-import java.util.*
-import kotlin.collections.ArrayList
 
 /**
  * Created by rivaldy on 12/10/2019.

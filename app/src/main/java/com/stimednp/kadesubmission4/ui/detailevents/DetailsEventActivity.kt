@@ -17,9 +17,9 @@ import com.stimednp.kadesubmission4.db.MydbOpenHelper.databaseNext
 import com.stimednp.kadesubmission4.model.DataEventLeagues
 import com.stimednp.kadesubmission4.model.DataFavorites
 import com.stimednp.kadesubmission4.presenter.detailematch.DetailsERepository
-import com.stimednp.kadesubmission4.util.CustomesUI
-import com.stimednp.kadesubmission4.util.invisible
-import com.stimednp.kadesubmission4.util.visible
+import com.stimednp.kadesubmission4.utils.UtilsUI
+import com.stimednp.kadesubmission4.utils.invisible
+import com.stimednp.kadesubmission4.utils.visible
 import kotlinx.android.synthetic.main.activity_details_event.*
 import kotlinx.android.synthetic.main.item_header_statis.*
 import kotlinx.android.synthetic.main.items_body_statis.*
@@ -245,7 +245,7 @@ class DetailsEventActivity : AppCompatActivity(), IDetailsEView {
 
         val urlimgH = "$badgeTeamH/preview"
         val urlimgA = "$badgeTeamA/preview"
-        val dateChange = CustomesUI.changeDateFormat(ev.dateEvent.toString(), ev.strTime.toString())
+        val dateChange = UtilsUI.changeDateFormat(ev.dateEvent.toString(), ev.strTime.toString())
 
         //header
         ev.intHomeScore ?: ev.intAwayScore ?: tv_fts.invisible()

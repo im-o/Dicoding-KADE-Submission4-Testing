@@ -1,4 +1,4 @@
-package com.stimednp.kadesubmission4.util
+package com.stimednp.kadesubmission4.utils
 
 import android.view.View
 
@@ -13,8 +13,4 @@ fun View.visible() {
 
 fun View.invisible() {
     visibility = View.INVISIBLE
-}
-
-fun View.gone() {
-    visibility = View.GONE
 }

@@ -8,7 +8,7 @@ import com.stimednp.kadesubmission4.presenter.detailleagues.fragmentnext.INextRe
  * Created by rivaldy on 12/8/2019.
  */
 
-interface INextMatchView: INextRepositoryCallback<ResponseEvents>, IView {
+interface INextMatchView : INextRepositoryCallback<ResponseEvents>, IView {
     fun showMsgSucces(text: String)
     fun showMsgFail(text: String)
     fun showTextEmpty(text: String)

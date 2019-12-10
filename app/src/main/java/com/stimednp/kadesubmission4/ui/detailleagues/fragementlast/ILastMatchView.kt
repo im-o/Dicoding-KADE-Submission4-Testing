@@ -8,7 +8,7 @@ import com.stimednp.kadesubmission4.presenter.detailleagues.fragmentlast.ILastRe
  * Created by rivaldy on 12/8/2019.
  */
 
-interface ILastMatchView: ILastRepositoryCallback<ResponseEvents>, IView{
+interface ILastMatchView : ILastRepositoryCallback<ResponseEvents>, IView {
     fun showMsgSucces(text: String)
     fun showMsgFail(text: String)
     fun showTextEmpty(text: String)

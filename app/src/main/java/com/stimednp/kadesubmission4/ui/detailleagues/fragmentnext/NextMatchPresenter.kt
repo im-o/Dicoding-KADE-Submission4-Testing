@@ -10,10 +10,10 @@ import com.stimednp.kadesubmission4.presenter.detailleagues.fragmentnext.NextRep
  * Created by rivaldy on 12/8/2019.
  */
 
-class NextMatchPresenter(private val view: INextMatchView, private val nextRepository: NextRepository): INextMatchPresenter {
+class NextMatchPresenter(private val view: INextMatchView, private val nextRepository: NextRepository) : INextMatchPresenter {
     override fun getNextMatch(idLeague: String) {
         view.onShowLoading()
-        nextRepository.getNextMatch(idLeague, object : INextRepositoryCallback<ResponseEvents>{
+        nextRepository.getNextMatch(idLeague, object : INextRepositoryCallback<ResponseEvents> {
             override fun onDataLoaded(data: ArrayList<DataEventLeagues>, itemsH: ArrayList<DataTeamsBadge>, itemsA: ArrayList<DataTeamsBadge>) {
                 view.onDataLoaded(data, itemsH, itemsA)
                 view.onHideLoading()

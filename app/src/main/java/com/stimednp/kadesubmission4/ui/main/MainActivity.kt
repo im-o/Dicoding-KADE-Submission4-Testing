@@ -7,14 +7,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.stimednp.kadesubmission4.R
 import com.stimednp.kadesubmission4.model.DataLeagues
 import com.stimednp.kadesubmission4.presenter.main.MainRepository
+import com.stimednp.kadesubmission4.ui.favoritesdb.FavoritesActivity
 import com.stimednp.kadesubmission4.ui.main.anko.MainUI
 import com.stimednp.kadesubmission4.ui.main.anko.MainUI.Companion.rv_main
 import com.stimednp.kadesubmission4.ui.main.anko.MainUI.Companion.swipeRefresh
 import com.stimednp.kadesubmission4.ui.main.anko.MainUI.Companion.tbar_main
 import com.stimednp.kadesubmission4.ui.main.anko.MainUI.Companion.tv_nodata
-import com.stimednp.kadesubmission4.ui.dbfavorites.FavoritesActivity
-import com.stimednp.kadesubmission4.util.invisible
-import com.stimednp.kadesubmission4.util.visible
+import com.stimednp.kadesubmission4.utils.invisible
+import com.stimednp.kadesubmission4.utils.visible
 import org.jetbrains.anko.setContentView
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.support.v4.onRefresh

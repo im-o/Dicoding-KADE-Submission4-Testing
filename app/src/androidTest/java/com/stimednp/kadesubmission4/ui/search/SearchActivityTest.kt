@@ -1,0 +1,74 @@
+package com.stimednp.kadesubmission4.ui.search
+
+import android.widget.EditText
+import androidx.recyclerview.widget.RecyclerView
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.*
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.contrib.RecyclerViewActions
+import androidx.test.espresso.matcher.ViewMatchers.*
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.rule.ActivityTestRule
+import com.stimednp.kadesubmission4.R.id.*
+import com.stimednp.kadesubmission4.ui.main.MainActivity
+import org.junit.Rule
+import org.junit.Test
+import org.junit.runner.RunWith
+
+
+/**
+ * Created by rivaldy on 12/10/2019.
+ */
+
+@RunWith(AndroidJUnit4::class)
+class SearchActivityTest {
+    @Rule
+    @JvmField
+    val acitivityRule = ActivityTestRule(MainActivity::class.java)
+
+    @Test
+    fun getTextSearch() {
+        //show data and click position 0
+        Thread.sleep(15000)
+        onView(withId(rv_main)).check(matches(isDisplayed()))
+        Thread.sleep(1000)
+        onView(withId(rv_main)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+
+        //click menu search
+        Thread.sleep(100)
+        onView(withId(item_search)).check(matches(isDisplayed()))
+        onView(withId(item_search)).perform(click())
+
+        //input and search "Arsenal"
+        Thread.sleep(100)
+        onView(withId(item_search_action)).check(matches(isDisplayed()))
+        onView(isAssignableFrom(EditText::class.java)).perform(typeText("Arsenal"), pressImeActionButton())
+
+        //show on recycler
+        Thread.sleep(15000) //delay 15 sec
+        onView(withId(rv_search)).check(matches(isDisplayed()))
+
+        //clear and search "Chelsea"
+        Thread.sleep(1000)
+        onView(isAssignableFrom(EditText::class.java)).perform(clearText())
+        onView(isAssignableFrom(EditText::class.java)).perform(typeText("Chelsea"), pressImeActionButton())
+
+        //show on recycler
+        Thread.sleep(15000) //delay 15 sec
+        onView(withId(rv_search)).check(matches(isDisplayed()))
+
+        //clear and search "No data will show"
+        Thread.sleep(1000)
+        onView(isAssignableFrom(EditText::class.java)).perform(clearText())
+        onView(isAssignableFrom(EditText::class.java)).perform(typeText("No data will show"), pressImeActionButton())
+
+        //text empty data show
+        Thread.sleep(500)
+        onView(withId(tv_empty_datas)).check(matches(isDisplayed()))
+
+        //clear text and exit until delay
+        Thread.sleep(1000)
+        onView(isAssignableFrom(EditText::class.java)).perform(clearText())
+        Thread.sleep(5000)
+    }
+}

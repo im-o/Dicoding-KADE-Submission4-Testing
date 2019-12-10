@@ -4,7 +4,6 @@ import com.stimednp.kadesubmission4.api.ApiClient
 import com.stimednp.kadesubmission4.model.DataEventLeagues
 import com.stimednp.kadesubmission4.model.DataTeamsBadge
 import com.stimednp.kadesubmission4.model.ResponseEvents
-import com.stimednp.kadesubmission4.presenter.detailleagues.fragmentlast.ILastRepositoryCallback
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

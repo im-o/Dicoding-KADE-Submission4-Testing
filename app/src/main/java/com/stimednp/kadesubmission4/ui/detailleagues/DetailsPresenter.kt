@@ -12,7 +12,7 @@ import com.stimednp.kadesubmission4.presenter.detailleagues.IDetailsLRepositoryC
 class DetailsPresenter(private val view: IDetailsLView, private val detailsLRepository: DetailsLRepository) : IDetailsLPresenter {
     override fun getLeaguesDetail(id: String?) {
         view.onShowLoading()
-        detailsLRepository.getDataById(id, object : IDetailsLRepositoryCallback<ResponseLeagues>{
+        detailsLRepository.getDataById(id, object : IDetailsLRepositoryCallback<ResponseLeagues> {
             override fun onDataLoaded(data: DataLeagues) {
                 view.onDataLoaded(data)
                 view.onHideLoading()

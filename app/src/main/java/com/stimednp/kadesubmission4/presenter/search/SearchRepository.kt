@@ -1,7 +1,6 @@
 package com.stimednp.kadesubmission4.presenter.search
 
 import android.annotation.SuppressLint
-import android.util.Log
 import com.stimednp.kadesubmission4.api.ApiClient
 import com.stimednp.kadesubmission4.model.DataEventLeagues
 import com.stimednp.kadesubmission4.model.DataTeamsBadge
@@ -17,7 +16,7 @@ import java.util.*
 
 class SearchRepository {
     private val tsdbService = ApiClient.iServiceTsdb
-    fun getSearchData(text: String, callback: ISearchRepositoryCallback<ResponseSearch>){
+    fun getSearchData(text: String, callback: ISearchRepositoryCallback<ResponseSearch>) {
         GlobalScope.launch(Dispatchers.Main) {
             val listEvents = tsdbService.getSearchEvent(text)
             try {
@@ -26,7 +25,6 @@ class SearchRepository {
                 val event = resBodyE?.event
                 savetoArrays(event, callback)
             } catch (er: Exception) {
-                Log.e("INIII", "ERRROR SEARCH 1 $er")
                 callback.onDataError()
             }
         }
@@ -73,7 +71,7 @@ class SearchRepository {
                         itemsH.addAll(bodyH?.teams!!)
                         itemsA.addAll(bodyA?.teams!!)
                     } catch (er: Exception) {
-                        Log.e("INIII", "ERRROR SEARCH 2 $er")
+                        callback.onDataError()
                     }
                 }
                 callback.onDataLoaded(events, itemsH, itemsA)

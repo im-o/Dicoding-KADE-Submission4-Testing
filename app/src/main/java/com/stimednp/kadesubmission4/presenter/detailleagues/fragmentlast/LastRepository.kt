@@ -1,6 +1,5 @@
 package com.stimednp.kadesubmission4.presenter.detailleagues.fragmentlast
 
-import android.util.Log.e
 import com.stimednp.kadesubmission4.api.ApiClient
 import com.stimednp.kadesubmission4.model.DataEventLeagues
 import com.stimednp.kadesubmission4.model.DataTeamsBadge
@@ -43,7 +42,6 @@ class LastRepository {
     }
 
     fun setIdTeam(events: ArrayList<DataEventLeagues>, teamH: ArrayList<Int>, teamA: ArrayList<Int>, callback: ILastRepositoryCallback<ResponseEvents>) {
-//        e("INIII","HASILL X : teamH : $teamH\nteamA : $teamA")
         GlobalScope.launch(Dispatchers.Main) {
             val itemsH = ArrayList<DataTeamsBadge>()
             val itemsA = ArrayList<DataTeamsBadge>()

@@ -33,5 +33,5 @@
         tools:text="@string/str_nomatch"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 </RelativeLayout>
