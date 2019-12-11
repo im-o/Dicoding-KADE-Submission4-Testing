@@ -27,7 +27,7 @@
 <img src="https://github.com/im-o/MyResource/blob/master/image-kade/details.jpeg" width="50%" height="50%">
 
 
-**Favote Match**
+**Favorite Match**
 ---
 
 <img src="https://github.com/im-o/MyResource/blob/master/image-kade/favorite.jpeg" width="50%" height="50%">
