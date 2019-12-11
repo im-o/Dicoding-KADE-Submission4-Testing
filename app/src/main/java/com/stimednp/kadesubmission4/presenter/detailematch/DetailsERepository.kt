@@ -2,6 +2,7 @@ package com.stimednp.kadesubmission4.presenter.detailematch
 
 import com.stimednp.kadesubmission4.api.ApiClient
 import com.stimednp.kadesubmission4.model.ResponseEvents
+import com.stimednp.kadesubmission4.utils.EspressoIdlingResource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -16,6 +17,7 @@ class DetailsERepository {
         GlobalScope.launch(Dispatchers.Main) {
             val listDetail = tsdbService.getDetailEvent(idEvent)
             try {
+                EspressoIdlingResource.increment() //DELETE THIS TEST AFTER TESTING
                 val response = listDetail.await()
                 if (response.isSuccessful) {
                     val resbody = response.body()

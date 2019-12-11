@@ -12,6 +12,7 @@ import com.stimednp.kadesubmission4.model.DataEventLeagues
 import com.stimednp.kadesubmission4.model.DataTeamsBadge
 import com.stimednp.kadesubmission4.presenter.search.SearchRepository
 import com.stimednp.kadesubmission4.ui.adapter.EventMatchAdapter
+import com.stimednp.kadesubmission4.utils.EspressoIdlingResource
 import com.stimednp.kadesubmission4.utils.invisible
 import com.stimednp.kadesubmission4.utils.visible
 import kotlinx.android.synthetic.main.activity_search.*
@@ -99,6 +100,10 @@ class SearchActivity : AppCompatActivity(), ISearchView, SearchView.OnQueryTextL
     }
 
     override fun onDataLoaded(data: ArrayList<DataEventLeagues>, teamH: ArrayList<DataTeamsBadge>, teamA: ArrayList<DataTeamsBadge>) {
+        if (!EspressoIdlingResource.idlingResource.isIdleNow){
+            //task is complete -> DELETE this after test (Memory leak)
+            EspressoIdlingResource.decrement()
+        }
         clearData()
         hideTextEmpty()
         itemEvents.addAll(data)
@@ -108,6 +113,10 @@ class SearchActivity : AppCompatActivity(), ISearchView, SearchView.OnQueryTextL
     }
 
     override fun onDataError() {
+        if (!EspressoIdlingResource.idlingResource.isIdleNow){
+            //task is complete -> DELETE this after test (Memory leak)
+            EspressoIdlingResource.decrement()
+        }
         showTextEmpty("No Data...")
     }
 

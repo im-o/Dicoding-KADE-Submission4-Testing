@@ -5,6 +5,7 @@ import com.stimednp.kadesubmission4.api.ApiClient
 import com.stimednp.kadesubmission4.model.DataEventLeagues
 import com.stimednp.kadesubmission4.model.DataTeamsBadge
 import com.stimednp.kadesubmission4.model.ResponseSearch
+import com.stimednp.kadesubmission4.utils.EspressoIdlingResource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -20,6 +21,7 @@ class SearchRepository {
         GlobalScope.launch(Dispatchers.Main) {
             val listEvents = tsdbService.getSearchEvent(text)
             try {
+                EspressoIdlingResource.increment() //DELETE THIS TEST AFTER TESTING
                 val responseE = listEvents.await()
                 val resBodyE = responseE.body()
                 val event = resBodyE?.event

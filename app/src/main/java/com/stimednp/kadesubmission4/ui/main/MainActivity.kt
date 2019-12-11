@@ -13,6 +13,7 @@ import com.stimednp.kadesubmission4.ui.main.anko.MainUI.Companion.rv_main
 import com.stimednp.kadesubmission4.ui.main.anko.MainUI.Companion.swipeRefresh
 import com.stimednp.kadesubmission4.ui.main.anko.MainUI.Companion.tbar_main
 import com.stimednp.kadesubmission4.ui.main.anko.MainUI.Companion.tv_nodata
+import com.stimednp.kadesubmission4.utils.EspressoIdlingResource
 import com.stimednp.kadesubmission4.utils.invisible
 import com.stimednp.kadesubmission4.utils.visible
 import org.jetbrains.anko.setContentView
@@ -82,6 +83,10 @@ class MainActivity : AppCompatActivity(), IMainView {
     }
 
     override fun onDataLoaded(data: ArrayList<DataLeagues>) {
+        if (!EspressoIdlingResource.idlingResource.isIdleNow){
+            //task is complete -> DELETE this after test (Memory leak)
+            EspressoIdlingResource.decrement()
+        }
         leagueList.clear()
         hideTextEmpty()
         setAdapter(data)

@@ -17,6 +17,7 @@ import com.stimednp.kadesubmission4.db.MydbOpenHelper.databaseNext
 import com.stimednp.kadesubmission4.model.DataEventLeagues
 import com.stimednp.kadesubmission4.model.DataFavorites
 import com.stimednp.kadesubmission4.presenter.detailematch.DetailsERepository
+import com.stimednp.kadesubmission4.utils.EspressoIdlingResource
 import com.stimednp.kadesubmission4.utils.UtilsUI
 import com.stimednp.kadesubmission4.utils.invisible
 import com.stimednp.kadesubmission4.utils.visible
@@ -80,6 +81,10 @@ class DetailsEventActivity : AppCompatActivity(), IDetailsEView {
     }
 
     override fun onDataLoaded(data: DataEventLeagues) {
+        if (!EspressoIdlingResource.idlingResource.isIdleNow){
+            //task is complete -> DELETE this after test (Memory leak)
+            EspressoIdlingResource.decrement()
+        }
         setData(data)
     }
 

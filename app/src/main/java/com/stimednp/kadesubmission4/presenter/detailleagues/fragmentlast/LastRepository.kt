@@ -4,6 +4,7 @@ import com.stimednp.kadesubmission4.api.ApiClient
 import com.stimednp.kadesubmission4.model.DataEventLeagues
 import com.stimednp.kadesubmission4.model.DataTeamsBadge
 import com.stimednp.kadesubmission4.model.ResponseEvents
+import com.stimednp.kadesubmission4.utils.EspressoIdlingResource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -19,6 +20,7 @@ class LastRepository {
         GlobalScope.launch(Dispatchers.Main) {
             val listIdEvent = tsdbService.getPrevMatch(idLeague)
             try {
+                EspressoIdlingResource.increment() //DELETE THIS TEST AFTER TESTING
                 val result = listIdEvent.await()
                 val resultBody = result.body()
                 val list = resultBody?.events

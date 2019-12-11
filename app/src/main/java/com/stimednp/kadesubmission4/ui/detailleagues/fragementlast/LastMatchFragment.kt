@@ -13,6 +13,7 @@ import com.stimednp.kadesubmission4.model.DataTeamsBadge
 import com.stimednp.kadesubmission4.presenter.detailleagues.fragmentlast.LastRepository
 import com.stimednp.kadesubmission4.ui.adapter.EventMatchAdapter
 import com.stimednp.kadesubmission4.ui.detailleagues.DetailsLeaguesActivity
+import com.stimednp.kadesubmission4.utils.EspressoIdlingResource
 import com.stimednp.kadesubmission4.utils.invisible
 import com.stimednp.kadesubmission4.utils.visible
 import kotlinx.android.synthetic.main.fragment_last_match.*
@@ -63,6 +64,10 @@ class LastMatchFragment : Fragment(), ILastMatchView {
     }
 
     override fun onDataLoaded(data: ArrayList<DataEventLeagues>, itemsH: ArrayList<DataTeamsBadge>, itemsA: ArrayList<DataTeamsBadge>) {
+        if (!EspressoIdlingResource.idlingResource.isIdleNow){
+            //task is complete -> DELETE this after test (Memory leak)
+            EspressoIdlingResource.decrement()
+        }
         itemEvents.clear()
         itemTeamsH.clear()
         itemTeamsA.clear()

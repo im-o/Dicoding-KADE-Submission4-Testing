@@ -35,7 +35,13 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+
+    //espresso
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.test.espresso:espresso-idling-resource:3.2.0'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+
 
     def retrofit2_version = "2.6.2"
     def okhttp3_version = "3.12.0"
@@ -81,6 +87,4 @@ dependencies {
         exclude group: 'com.android.support', module: 'design'
         exclude group: 'com.android.support', module: 'recyclerview-v7'
     }
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test:rules:1.0.2'
 }

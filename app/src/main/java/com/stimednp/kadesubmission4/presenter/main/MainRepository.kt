@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import com.stimednp.kadesubmission4.api.ApiClient
 import com.stimednp.kadesubmission4.model.DataLeagues
 import com.stimednp.kadesubmission4.model.ResponseLeagues
+import com.stimednp.kadesubmission4.utils.EspressoIdlingResource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -21,6 +22,7 @@ class MainRepository() {
         GlobalScope.launch(Dispatchers.IO) {
             val listIdLeagues = tsdbService.getListLeagues()
             try {
+                EspressoIdlingResource.increment() //DELETE THIS TEST AFTER TESTING
                 val response = listIdLeagues.await()
                 if (response.isSuccessful) {
                     val responseBody = response.body()

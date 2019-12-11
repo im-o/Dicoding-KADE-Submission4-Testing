@@ -15,6 +15,7 @@ import com.stimednp.kadesubmission4.ui.adapter.ViewPagerAdapter
 import com.stimednp.kadesubmission4.ui.detailleagues.fragementlast.LastMatchFragment
 import com.stimednp.kadesubmission4.ui.detailleagues.fragmentnext.NextMatchFragment
 import com.stimednp.kadesubmission4.ui.search.SearchActivity
+import com.stimednp.kadesubmission4.utils.EspressoIdlingResource
 import kotlinx.android.synthetic.main.activity_details_leagues.*
 import kotlinx.android.synthetic.main.item_header.*
 import org.jetbrains.anko.startActivity
@@ -109,6 +110,10 @@ class DetailsLeaguesActivity : AppCompatActivity(), IDetailsLView {
     }
 
     override fun onDataLoaded(data: DataLeagues) {
+        if (!EspressoIdlingResource.idlingResource.isIdleNow){
+            //task is complete -> DELETE this after test (Memory leak)
+            EspressoIdlingResource.decrement()
+        }
         showData(data)
         addButtonListener(data)
     }
