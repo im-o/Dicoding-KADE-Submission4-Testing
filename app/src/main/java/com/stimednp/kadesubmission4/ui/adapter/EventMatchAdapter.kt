@@ -34,7 +34,7 @@ class EventMatchAdapter(
 
     override fun onBindViewHolder(holder: EventMatchViewHolder, position: Int) {
         holder.bindItem(items[position], badgesH[position], badgesA[position])
-        holder.view.setOnClickListener() {
+        holder.view.setOnClickListener {
             context?.startActivity<DetailsEventActivity>(
                 DetailsEventActivity.EXTRA_DATA_EVENT to items[position].idEvent,
                 DetailsEventActivity.EXTRA_BADGEH to badgesH[position].strTeamBadge,

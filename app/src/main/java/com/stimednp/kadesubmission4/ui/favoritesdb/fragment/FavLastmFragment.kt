@@ -21,14 +21,10 @@ import org.jetbrains.anko.support.v4.onRefresh
  * A simple [Fragment] subclass.
  */
 class FavLastmFragment : Fragment() {
-    var itemFavorites: ArrayList<DataFavorites> = arrayListOf()
+    private var itemFavorites: ArrayList<DataFavorites> = arrayListOf()
     private var adapter: FavoriteAdapter? = null
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_fav_lastm, container, false)
     }
 

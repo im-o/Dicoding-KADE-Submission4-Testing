@@ -38,7 +38,7 @@ class FavoriteAdapter(
 
     override fun onBindViewHolder(holder: MatchViewHolder, position: Int) {
         holder.bindItem(items[position])
-        holder.view.setOnClickListener() {
+        holder.view.setOnClickListener {
             context.startActivity<DetailsEventActivity>(
                 DetailsEventActivity.EXTRA_DATA_EVENT to items[position].idEvent,
                 DetailsEventActivity.EXTRA_BADGEH to items[position].strBadgeH,

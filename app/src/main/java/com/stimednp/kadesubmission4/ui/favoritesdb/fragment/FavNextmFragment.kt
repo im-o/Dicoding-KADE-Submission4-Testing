@@ -20,7 +20,7 @@ import org.jetbrains.anko.support.v4.onRefresh
  * A simple [Fragment] subclass.
  */
 class FavNextmFragment : Fragment() {
-    var itemFavorites: ArrayList<DataFavorites> = arrayListOf()
+    private var itemFavorites: ArrayList<DataFavorites> = arrayListOf()
     private var adapter: FavoriteAdapter? = null
 
     override fun onCreateView(

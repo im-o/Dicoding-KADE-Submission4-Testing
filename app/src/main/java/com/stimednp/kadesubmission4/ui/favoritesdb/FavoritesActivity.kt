@@ -20,7 +20,7 @@ class FavoritesActivity : AppCompatActivity() {
     private fun setToolbar() {
         setSupportActionBar(tbar_fav)
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
-        tbar_fav.setNavigationIcon(getDrawable(R.drawable.ic_keyboard_backspace_black_24dp))
+        tbar_fav.navigationIcon = getDrawable(R.drawable.ic_keyboard_backspace_black_24dp)
         tbar_fav.setNavigationOnClickListener { finish() }
     }
 
